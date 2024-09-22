@@ -64,7 +64,7 @@
                 "sugarapp-gen-desktop activity/activity.info desktop --mimetypes mimetypes",
                 "install -D mimetypes /app/share/mime/packages/org.sugarlabs.CellGame.xml",
                 "install -D mimetypes /app/share/sugar/activities/CellGame.activity/activity/mimetypes.xml",
-                "install -D appdata /app/share/metainfo/org.sugarlabs.CellGame.appdata.xml",
+                "install -D appdata /app/share/metainfo/org.sugarlabs.CellGame.metainfo.xml",
                 "install -D desktop /app/share/applications/org.sugarlabs.CellGame.desktop",
                 "install -D activity/cellgame.svg /app/share/icons/hicolor/scalable/apps/org.sugarlabs.CellGame.svg"
             ]
