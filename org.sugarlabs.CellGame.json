@@ -56,6 +56,10 @@
                 {
                     "type": "patch",
                     "path": "cellgame-info.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "cellgame-monitors.patch"
                 }
             ],
             "post-install": [

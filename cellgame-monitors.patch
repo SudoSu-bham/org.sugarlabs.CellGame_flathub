@@ -1,0 +1,34 @@
+diff --git a/activity.py b/activity.py
+index c96e1e2..650925a 100644
+--- a/activity.py
++++ b/activity.py
+@@ -28,6 +28,8 @@ import cells
+ 
+ from sugarapp.widgets import SugarCompatibleActivity
+ from sugarapp.widgets import ExtendedActivityToolbarButton
++from sugarapp.helpers import PrimaryMonitor
++from sugar3.graphics.style import GRID_CELL_SIZE
+ 
+ class Activity(SugarCompatibleActivity):
+     def __init__(self, handle):
+@@ -43,6 +45,11 @@ class Activity(SugarCompatibleActivity):
+         self.game.canvas.grab_focus()
+         self.build_toolbar()
+ 
++        w = PrimaryMonitor.width()
++        h = PrimaryMonitor.height()
++        # 6 added in order to remove space b/w top panel and pygame canvas
++        self.game.canvas.set_size_request(w, h - GRID_CELL_SIZE + 6)
++
+     def build_toolbar(self):
+ 
+         toolbar_box = ToolbarBox()
+@@ -65,8 +72,6 @@ class Activity(SugarCompatibleActivity):
+         stop_button.show()
+         stop_button.connect('clicked', self._stop_cb)
+ 
+-        self.show_all()
+-
+     def _stop_cb(self, button):
+         self.game.running = False
+         self.game.helping = False
